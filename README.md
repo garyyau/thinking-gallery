@@ -1,1 +1,2 @@
-# thinkingbox-test
+# webpack-the-basics
+# webpack-the-basics
