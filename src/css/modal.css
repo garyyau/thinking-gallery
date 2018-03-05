@@ -11,8 +11,37 @@
 }
 
 #modal {
-  background-color: red;
-  height: 300px;
+  border: 2px solid white;
+  line-height: 1.4;
   margin: auto;
-  width: 550px;
+  position: relative;
+}
+
+.modal__image {
+  margin: 0;
+  padding: 0;
+}
+
+.modal__image > img {
+  display: block;
+  max-height: 95vh;
+  max-width: 95vw;
+}
+
+.modal__close {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.modal__description {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 10px;
+  line-height: 1.4;
+  margin: 0 10px;
+  padding: 10px;
+  position: absolute;
+  word-break: break-word;
 }

@@ -20,16 +20,17 @@
 body {
   background-color: var(--background);
   color: var(--text);
-  font-family: var(--raleway);
+  font-family: var(--roboto);
 }
 
-a:link, a:visited, a:active {
+a:link, a:visited, a:active, .link {
   color: var(--link);
   text-decoration: none;
 }
 
-a:hover {
+a:hover, .link:hover {
   color: var(--text);
+  cursor: pointer;
 }
 
 .hide {
