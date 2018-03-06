@@ -2,6 +2,7 @@ import data from '../../data.json';
 
 import { animateModalIn, animateModalOut } from './images-animation.js';
 import { hideNavbar } from './navbar.js';
+import { animateOut } from './preloader-mask-animation.js';
 
 const updateImageModal = (image, event) => {
   const container = document.getElementById("modal-container");
@@ -18,19 +19,45 @@ const updateImageModal = (image, event) => {
   animateModalIn(event.srcElement);
 };
 
-const createImageContainers = () => {
+const createImageContainer = (imageData) => {
   const container = document.getElementById("content-container");
 
-  data.forEach(image => {
-    const divElm = document.createElement("div");
-    divElm.className = "image-container";
-    divElm.style.backgroundImage = `url('${image.url}')`;
-    divElm.onclick = (event) => {
-      updateImageModal(image, event);
-    }
+  const divElm = document.createElement("div");
+  divElm.className = "image-container";
+  divElm.style.backgroundImage = `url('${imageData.url}')`;
+  divElm.onclick = (event) => {
+    updateImageModal(imageData, event);
+  }
 
-    container.appendChild(divElm);
+  container.appendChild(divElm);
+};
+
+const loadImageData = () => {
+  let counter = 0;
+
+  data.forEach(imageData => {
+    counter++;
+    const image = new Image();
+
+    image.onload = () => {
+      createImageContainer(imageData);
+      counter--;
+    };
+    image.src = imageData.url;
   });
+
+  const setLoadTimer = (interval, attempts) => {
+    setTimeout(() => {
+      if (counter === 0 || attempts === 0) {
+        console.log("finished");
+        animateOut();
+      } else {
+        setLoadTimer(interval, --attempts);
+      }
+    }, interval);
+  };
+
+  setLoadTimer(1000, 90);
 };
 
 const setupImageModalClose = () => {
@@ -50,6 +77,6 @@ const setupImageModalClose = () => {
 };
 
 export const setupImageComponents = () => {
-  createImageContainers();
+  loadImageData();
   setupImageModalClose();
 };

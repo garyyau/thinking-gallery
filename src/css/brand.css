@@ -1,0 +1,11 @@
+.brand {
+  font-family: var(--raleway);
+  font-size: 24px;
+}
+
+.brand .brand--written {
+  font-family: var(--dancing-script);
+  font-size: 35px;
+  line-height: 0;
+  margin-left: 5px;
+}

@@ -27,22 +27,13 @@
   width: 100%;
 }
 
-.brand {
+#main-header .brand {
   align-self: initial;
-  font-family: var(--raleway);
-  font-size: 24px;
   margin-left: 10px;
   order: 1;
   transform: none;
   transform-origin: initial;
   white-space: nowrap;
-}
-
-.brand span {
-  font-family: var(--dancing-script);
-  font-size: 35px;
-  line-height: 0;
-  margin-left: 5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -60,7 +51,7 @@
     width: 75%;
   }
 
-  .brand {
+  #main-header .brand {
     align-self: flex-start;
     margin-left: 35%;
     order: 2;

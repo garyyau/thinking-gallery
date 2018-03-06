@@ -1,0 +1,33 @@
+#preload-mask {
+  align-items: center;
+  background-color: var(--background);
+  border-bottom: 1px solid white;
+  border-right: none;
+  box-sizing: initial;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+
+#preload-mask .brand {
+  position: absolute;
+  white-space: nowrap;
+}
+
+#preload-mask .brand--loader {
+  position: absolute;
+}
+
+#preload-mask .brand--written {
+  opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  #preload-mask {
+    border-bottom: none;
+    border-right: 1px solid white;
+  }
+}
