@@ -5,37 +5,37 @@ html, body {
 }
 
 .container {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Main Container */
 .main-container {
+  /*flex-shrink: 0;*/
+  height: 100vh;
   overflow: hidden;
   transform: initial;
   transform-origin: initial;
   width: 100vw;
-  height: 100vh;
-  flex-shrink: 0;
 }
 
 .main-container--scrollable {
-  width: 100%;
+  box-sizing: initial;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   padding-right: 20px;
+  width: 100%;
 }
 
 .main-container--reoriented {
+  box-sizing: border-box;
   transform: none;
   transform-origin: initial;
   white-space: nowrap;
-  font-size: 0;
 }
 
 #content-container {

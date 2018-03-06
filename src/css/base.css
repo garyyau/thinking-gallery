@@ -4,6 +4,7 @@
   /* Colors */
   --grey-50: #fafafa;
   --grey-500: #9e9e9e;
+  --grey-700: #616161;
   --grey-900: #212121;
 
   /* Fonts */
@@ -33,7 +34,7 @@ body {
   font-family: var(--roboto);
 }
 
-a:link, a:visited, a:active, .link {
+a:link, a:visited, a:active, a.disabled, .link {
   color: var(--link);
   text-decoration: none;
   transition: color 0.2s ease-in, opacity 0.2s ease-in;
@@ -42,4 +43,20 @@ a:link, a:visited, a:active, .link {
 a:hover, .link:hover {
   color: var(--text);
   cursor: pointer;
+}
+
+a.disabled, a.disabled:hover {
+  align-items: center;
+  color: var(--grey-700);
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+a.disabled .coming-soon {
+  color: white;
+  font-size: 12px;
+  opacity: 0.6;
 }

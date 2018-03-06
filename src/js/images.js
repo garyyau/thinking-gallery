@@ -1,8 +1,7 @@
 import data from '../../data.json';
 
-import { animateModalIn } from './images-animation.js';
+import { animateModalIn, animateModalOut } from './images-animation.js';
 import { hideNavbar } from './navbar.js';
-import { hideElement, showElement } from './utils.js';
 
 const updateImageModal = (image, event) => {
   const container = document.getElementById("modal-container");
@@ -15,9 +14,7 @@ const updateImageModal = (image, event) => {
   const description = modal.getElementsByClassName("modal__description")[0];
   description.innerHTML = image.description;
 
-  window.container = container;
   hideNavbar();
-  showElement(container);
   animateModalIn(event.srcElement);
 };
 
@@ -43,12 +40,12 @@ const setupImageModalClose = () => {
 
   container.onclick = (event) => {
     if (event.target.id === "modal-container") {
-      hideElement(container);
+      animateModalOut();
     }
   };
 
   close.onclick = () => {
-    hideElement(container);
+    animateModalOut();
   };
 };
 
