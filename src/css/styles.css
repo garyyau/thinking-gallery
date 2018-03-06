@@ -4,13 +4,6 @@ html, body {
   width: 100%;
 }
 
-* {
-  transition:
-    background-color 0.2s ease-in,
-    color 0.2s ease-in,
-    opacity 0.2s ease-in;
-}
-
 .container {
   height: 100%;
   width: 100%;
@@ -60,6 +53,7 @@ html, body {
   height: 62vw;
   width: 100vw;
   opacity: 0.4;
+  transition: opacity 0.2s ease-in;
 }
 
 .image-container:hover {

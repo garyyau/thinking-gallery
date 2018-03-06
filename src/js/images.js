@@ -1,9 +1,10 @@
 import data from '../../data.json';
 
+import { animateModalIn } from './images-animation.js';
 import { hideNavbar } from './navbar.js';
 import { hideElement, showElement } from './utils.js';
 
-const updateImageModal = (image) => {
+const updateImageModal = (image, event) => {
   const container = document.getElementById("modal-container");
   const modal = document.getElementById("modal");
 
@@ -14,8 +15,10 @@ const updateImageModal = (image) => {
   const description = modal.getElementsByClassName("modal__description")[0];
   description.innerHTML = image.description;
 
+  window.container = container;
   hideNavbar();
   showElement(container);
+  animateModalIn(event.srcElement);
 };
 
 const createImageContainers = () => {
@@ -25,7 +28,9 @@ const createImageContainers = () => {
     const divElm = document.createElement("div");
     divElm.className = "image-container";
     divElm.style.backgroundImage = `url('${image.url}')`;
-    divElm.onclick = () => { updateImageModal(image); }
+    divElm.onclick = (event) => {
+      updateImageModal(image, event);
+    }
 
     container.appendChild(divElm);
   });

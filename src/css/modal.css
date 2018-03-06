@@ -7,10 +7,11 @@
 }
 
 #modal {
+  background-color: var(--background);
   border: 2px solid white;
   line-height: 1.4;
-  margin: auto;
-  position: relative;
+  overflow: hidden;
+  position: absolute;
 }
 
 .modal__image {
