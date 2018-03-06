@@ -6,6 +6,10 @@ const header = document.getElementById("main-header");
 const headerBrand = header.getElementsByClassName("brand")[0];
 const breakpoint = 768;
 
+/**
+ * GSAP timeline for animating the preloader mask out on the left, which is
+ * used when the window size is above breakpoint
+ */
 const animateOutLeft = () => {
   const timeline = new TimelineLite();
   const targetBounding = headerBrand.getBoundingClientRect();
@@ -36,6 +40,10 @@ const animateOutLeft = () => {
   timeline.set(mask, { css: { zIndex: -9999 }});
 };
 
+/**
+ * GSAP timeline for animating the preloader mask out on the top, which is
+ * used when the window size is below breakpoint
+ */
 const animateOutTop = () => {
   const timeline = new TimelineLite();
   const targetBounding = headerBrand.getBoundingClientRect();
@@ -60,6 +68,9 @@ const animateOutTop = () => {
   timeline.set(mask, { css: { zIndex: -9999 }});
 };
 
+/**
+ * GSAP timeline for animating the preloader out
+ */
 export const animateOut = () => {
   const written = brand.getElementsByClassName("brand--written")[0];
   const loader = brand.getElementsByClassName("brand--loader")[0];

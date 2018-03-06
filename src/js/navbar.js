@@ -1,6 +1,9 @@
 const navbar = document.getElementById("navbar");
 const breakpoint = 768;
 
+/**
+ * GSAP timeline for animating the Navigation in
+ */
 const animateIn = () => {
   const timeline = new TimelineLite();
 
@@ -28,6 +31,9 @@ const animateIn = () => {
   timeline.set(navbar, { css: attrEnd });
 };
 
+/**
+ * GSAP timeline for animating the Navigation out
+ */
 const animateOut = () => {
   const timeline = new TimelineLite();
 
@@ -55,6 +61,11 @@ const animateOut = () => {
   timeline.set(navbar, { css: attrEnd });
 };
 
+/**
+ * Check whether the Navigation is currently visible
+ *
+ * @return {bool} True if the Navigation is visible
+ */
 const isVisible = () => {
   if (window.innerWidth < breakpoint) {
     return navbar.offsetTop > 0;
@@ -63,12 +74,18 @@ const isVisible = () => {
   }
 }
 
+/**
+ * Hides the Navigation
+ */
 export const hideNavbar = () => {
   if (isVisible()) {
     animateOut();
   }
 }
 
+/**
+ * Sets up an onclick handler onto the header's menu icon to toggle Navigation
+ */
 export const setupNavbar = () => {
   const header = document.getElementById("main-header");
   const menuIcon = header.getElementsByClassName("icon--menu")[0];

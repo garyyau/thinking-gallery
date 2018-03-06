@@ -3,6 +3,11 @@ const container = document.getElementById("modal-container");
 const modal = document.getElementById("modal");
 const content = document.getElementsByClassName("modal__content")[0];
 
+/**
+ * GSAP timeline for animating the image modal in
+ *
+ * @param  {HTML Element} element Element that was clicked to trigger the modal
+ */
 export const animateModalIn = (element) => {
   const timeline = new TimelineLite();
 
@@ -46,6 +51,9 @@ export const animateModalIn = (element) => {
   timeline.set(body, { css: { overflow: 'auto' }});
 };
 
+/**
+ * GSAP timeline for animating the image modal out
+ */
 export const animateModalOut = () => {
   const timeline = new TimelineLite();
   timeline.fromTo(container, 0.4, {
