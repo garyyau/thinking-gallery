@@ -122,11 +122,13 @@ a.disabled .coming-soon {
 
 /* Main Container */
 .main-container {
-  /*flex-shrink: 0;*/
+  flex-shrink: initial;
   height: 100vh;
   overflow: hidden;
-  transform: initial;
-  transform-origin: initial;
+  -webkit-transform: initial;
+          transform: initial;
+  -webkit-transform-origin: initial;
+          transform-origin: initial;
   width: 100vw;
 }
 
@@ -141,8 +143,10 @@ a.disabled .coming-soon {
 
 .main-container--reoriented {
   box-sizing: border-box;
-  transform: none;
-  transform-origin: initial;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transform-origin: initial;
+          transform-origin: initial;
   white-space: nowrap;
 }
 
@@ -175,15 +179,20 @@ a.disabled .coming-soon {
   }
 
   .main-container {
-    transform: rotate(270deg) translateX(-100%);
-    transform-origin: top left;
+    flex-shrink: 0;
+    -webkit-transform: rotate(270deg) translateX(-100%);
+            transform: rotate(270deg) translateX(-100%);
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
     width: 100vh;
     height: 100vw;
   }
 
   .main-container--reoriented {
-    transform: rotate(90deg) translateY(-100vh);
-    transform-origin: top left;
+    -webkit-transform: rotate(90deg) translateY(-100vh);
+            transform: rotate(90deg) translateY(-100vh);
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
   }
 
   #content-container {
@@ -247,8 +256,10 @@ a.disabled .coming-soon {
   align-self: initial;
   margin-left: 10px;
   order: 1;
-  transform: none;
-  transform-origin: initial;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transform-origin: initial;
+          transform-origin: initial;
   white-space: nowrap;
 }
 
@@ -271,8 +282,10 @@ a.disabled .coming-soon {
     align-self: flex-start;
     margin-left: 35%;
     order: 2;
-    transform: rotate(-90deg);
-    transform-origin: top left;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
   }
 }
 #modal-container {

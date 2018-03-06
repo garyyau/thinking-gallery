@@ -9,7 +9,7 @@
 
 /* Main Container */
 .main-container {
-  /*flex-shrink: 0;*/
+  flex-shrink: initial;
   height: 100vh;
   overflow: hidden;
   transform: initial;
@@ -62,6 +62,7 @@
   }
 
   .main-container {
+    flex-shrink: 0;
     transform: rotate(270deg) translateX(-100%);
     transform-origin: top left;
     width: 100vh;

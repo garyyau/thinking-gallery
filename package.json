@@ -10,9 +10,11 @@
   "author": "Gary Yau",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^8.1.0",
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.0",
+    "postcss-loader": "^2.1.1",
     "style-loader": "^0.18.1",
     "webpack": "^2.6.1"
   }
