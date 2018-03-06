@@ -6,10 +6,6 @@
   z-index: 10;
 }
 
-.hide {
-  display: none;
-}
-
 #modal {
   border: 2px solid white;
   line-height: 1.4;

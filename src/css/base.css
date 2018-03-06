@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto|Dancing+Script');
 
 * {
   /* Colors */
@@ -7,6 +7,7 @@
   --grey-900: #212121;
 
   /* Fonts */
+  --dancing-script: 'Dancing Script', cursive;
   --raleway: 'Raleway', sans-serif;
   --roboto: 'Roboto', sans-serif;
 
@@ -15,6 +16,15 @@
   --link: var(--grey-500);
   --text: var(--grey-50);
   --trans-background: rgba(0, 0, 0, 0.3);
+  --header-width: 75px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 body {
@@ -31,8 +41,4 @@ a:link, a:visited, a:active, .link {
 a:hover, .link:hover {
   color: var(--text);
   cursor: pointer;
-}
-
-.hide {
-  display: none !important;
 }

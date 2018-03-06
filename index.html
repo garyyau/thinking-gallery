@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>Thinking Gallery</title>
+  <meta name="description" content="Thinking Gallery">
 
   <link rel="stylesheet" href="dist/style.css">
 
@@ -17,61 +16,25 @@
 
 <body>
   <div class="container">
-    <header class="main-header">
+    <header id="main-header">
       <!-- TODO: Logo Image instead of text? -->
-      <span>TG</span>
+      <div class="icon--menu">
+        <img src="dist/assets/micon_menu_white.png" />
+      </div>
+      <div class="brand">Thinking <span>Gallery</span></div>
     </header>
-<!--
-    <nav class="navbar">
+
+    <nav id="navbar" class="hide">
       <a href="">Gallery</a>
       <a href="">Gallery</a>
       <a href="">Gallery</a>
       <a href="">Gallery</a>
-    </nav> -->
+    </nav>
 
     <div class="main-container">
       <div class="main-container--scrollable">
         <div class="main-container--reoriented">
-          <div id="content-container">
-            <!-- <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>`
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div>
-            <div class="image-container"><img src="https://placeimg.com/400/250/any" /></div> -->
-          </div>
+          <div id="content-container"></div>
         </div>
       </div>
     </div>
@@ -88,6 +51,8 @@
 
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js"></script>
   <script type="text/javascript" src="dist/bundle.js"></script>
 
 </body>

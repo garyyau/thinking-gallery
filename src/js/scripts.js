@@ -1,5 +1,7 @@
-import { setup } from './setup.js'
+import { setupImageComponents } from './images.js';
+import { setupNavbar } from './navbar';
 
 (function() {
-  setup();
+  setupImageComponents();
+  setupNavbar();
 })()

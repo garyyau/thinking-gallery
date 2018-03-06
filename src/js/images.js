@@ -1,4 +1,7 @@
-import data from '../../data.json'
+import data from '../../data.json';
+
+import { hideNavbar } from './navbar.js';
+import { hideElement, showElement } from './utils.js';
 
 const updateImageModal = (image) => {
   const container = document.getElementById("modal-container");
@@ -11,23 +14,17 @@ const updateImageModal = (image) => {
   const description = modal.getElementsByClassName("modal__description")[0];
   description.innerHTML = image.description;
 
-  const classes = container.className.split(" ");
-  const hideIndex = classes.findIndex((className) => (className === "hide"));
-  classes.splice(hideIndex, 1);
-
-  container.className = classes.join(" ");
+  hideNavbar();
+  showElement(container);
 };
 
 const createImageContainers = () => {
   const container = document.getElementById("content-container");
 
   data.forEach(image => {
-    const imgElm = document.createElement("img");
-    imgElm.src = image.url;
-
     const divElm = document.createElement("div");
-    divElm.appendChild(imgElm);
     divElm.className = "image-container";
+    divElm.style.backgroundImage = `url('${image.url}')`;
     divElm.onclick = () => { updateImageModal(image); }
 
     container.appendChild(divElm);
@@ -39,14 +36,18 @@ const setupImageModalClose = () => {
   const modal = document.getElementById("modal");
   const close = modal.getElementsByClassName("modal__close")[0];
 
+  container.onclick = (event) => {
+    if (event.target.id === "modal-container") {
+      hideElement(container);
+    }
+  };
+
   close.onclick = () => {
-    const classes = container.className.split(" ");
-    classes.push("hide");
-    container.className = classes.join(" ");
-  }
+    hideElement(container);
+  };
 };
 
-export const setup = () => {
+export const setupImageComponents = () => {
   createImageContainers();
   setupImageModalClose();
 };
